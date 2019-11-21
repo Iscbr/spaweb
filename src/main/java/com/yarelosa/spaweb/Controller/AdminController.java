@@ -38,4 +38,9 @@ public class AdminController {
     public String citas(Model model) {
         return "/admin/citasPro";
     }
+
+    @GetMapping("/adminPer")
+    public String agregar(Model model){
+        return "/admin/adminPer";
+    }
 }

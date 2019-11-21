@@ -1,5 +1,6 @@
 package com.yarelosa.spaweb.Service;
 
+import com.yarelosa.spaweb.DTO.UsuarioDTO;
 import com.yarelosa.spaweb.Entity.Rol;
 import com.yarelosa.spaweb.Entity.Usuario;
 import com.yarelosa.spaweb.Repository.UsuarioRepository;
@@ -23,9 +24,19 @@ public class UsuarioService {
         return this.usuarioRepository.getAllByActivoTrue();
     }
 
-    public Usuario saveUser(Usuario usuario) {
-        return this.usuarioRepository.save(usuario);
+    /*
+    public Usuario saveUser(UsuarioDTO usuarioDTO) {
+
+        Usuario user = new Usuario();
+        user.setNombre(usuarioDTO.getNombre());
+        user.setEmail(usuarioDTO.getEmail());
+
+        this.usuarioRepository.save(user);
+
+        return user;
     }
+
+     */
 
     public Usuario getById(Integer id) {
         return usuarioRepository.findById(id).orElse(null);
