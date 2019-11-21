@@ -1,9 +1,11 @@
 package com.yarelosa.spaweb.Entity;
 
+import com.yarelosa.spaweb.Repository.UsuarioRepository;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.List;
 
 @Entity
 @Table(name = "servicios")
@@ -32,4 +34,7 @@ public class Servicio {
 
     @Column (name = "activo", nullable = false)
     private Boolean activo;
+
+    @ManyToMany(mappedBy = "servicios")
+    private List<Usuario> users;
 }

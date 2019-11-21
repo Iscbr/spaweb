@@ -1,5 +1,7 @@
 package com.yarelosa.spaweb.Entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.yarelosa.spaweb.com.yarelosa.spaweb.Util.Views;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +16,7 @@ public class Usuario {
     @Id
     @Column(name = "usuario_id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView({Views.UsuarioView.class})
     private Integer id;
 
     @Column(name = "usuario_nombre", length = 50, nullable = false)
@@ -45,4 +48,11 @@ public class Usuario {
             joinColumns = { @JoinColumn(name = "usuario_id") },
             inverseJoinColumns = { @JoinColumn(name = "rol_id") })
     private List<Rol> roles;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "usuario_servicio",
+            joinColumns = { @JoinColumn(name = "usuario_id") },
+            inverseJoinColumns = { @JoinColumn(name = "servicio_id") })
+    private List<Servicio> servicios;
 }

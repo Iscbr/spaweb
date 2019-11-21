@@ -19,34 +19,11 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    /*@Override
-    @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        Usuario user = this.usuarioRepository.findByUsername(username);
-
-        if (user == null) throw new UsernameNotFoundException("No se ha encontrado el usuario : " + username);
-
-        List<GrantedAuthority> authorities = user
-                .getRoles()
-                .stream()
-                .map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
-                .collect(Collectors.toList());
-
-        return new User(user.getUsername(),
-                user.getPassword(),
-                user.getActivo(),
-                true,
-                true,
-                true,
-                authorities);
-    }*/
-
     public List<Usuario> getAllUsers() {
         return this.usuarioRepository.getAllByActivoTrue();
     }
 
-    public Usuario saveUser(Usuario usuario) throws Exception {
+    public Usuario saveUser(Usuario usuario) {
         return this.usuarioRepository.save(usuario);
     }
 
