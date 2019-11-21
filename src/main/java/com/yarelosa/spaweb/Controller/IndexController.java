@@ -13,6 +13,6 @@ public class IndexController {
     public String index(Model model) {
         model.addAttribute("title", "Home");
         model.addAttribute("name", "Principal of web application");
-        return "index";
+        return "/admin/index";
     }
 }
