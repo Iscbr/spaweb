@@ -10,7 +10,7 @@ import java.util.List;
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     List<Usuario> getAllByActivoTrue();
 
-    List<Usuario> getAllByActivoFalseAndActivoTrue();
+    List<Usuario> getAllByIdIsNotNull();
 
     Usuario findByActivoTrueAndUsername(String username);
 

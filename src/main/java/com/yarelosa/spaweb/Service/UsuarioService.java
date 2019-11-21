@@ -1,5 +1,6 @@
 package com.yarelosa.spaweb.Service;
 
+import com.yarelosa.spaweb.DTO.UsuarioDTO;
 import com.yarelosa.spaweb.Entity.Rol;
 import com.yarelosa.spaweb.Entity.Usuario;
 import com.yarelosa.spaweb.Repository.UsuarioRepository;
@@ -19,36 +20,23 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    /*@Override
-    @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        Usuario user = this.usuarioRepository.findByUsername(username);
-
-        if (user == null) throw new UsernameNotFoundException("No se ha encontrado el usuario : " + username);
-
-        List<GrantedAuthority> authorities = user
-                .getRoles()
-                .stream()
-                .map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
-                .collect(Collectors.toList());
-
-        return new User(user.getUsername(),
-                user.getPassword(),
-                user.getActivo(),
-                true,
-                true,
-                true,
-                authorities);
-    }*/
-
     public List<Usuario> getAllUsers() {
         return this.usuarioRepository.getAllByActivoTrue();
     }
 
-    public Usuario saveUser(Usuario usuario) throws Exception {
-        return this.usuarioRepository.save(usuario);
+    /*
+    public Usuario saveUser(UsuarioDTO usuarioDTO) {
+
+        Usuario user = new Usuario();
+        user.setNombre(usuarioDTO.getNombre());
+        user.setEmail(usuarioDTO.getEmail());
+
+        this.usuarioRepository.save(user);
+
+        return user;
     }
+
+     */
 
     public Usuario getById(Integer id) {
         return usuarioRepository.findById(id).orElse(null);
