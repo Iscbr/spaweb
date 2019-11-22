@@ -18,7 +18,7 @@ public class Servicio {
     private Integer id;
 
     @Column (name = "servicio_nombre", length = 50, nullable = false)
-    private String servicioNombre;
+    private String nombre;
 
     @Column ( name = "servicio_descrip", length = 15, nullable = false)
     private String servicioDesc;

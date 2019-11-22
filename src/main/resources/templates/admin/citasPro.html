@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,12 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/admin/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Perfil</title>
     <!-- Bootstrap Core CSS -->
     <link href="/admin/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/admin/css/style.css" rel="stylesheet">
+    <link href="/admin/css/stylo.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="/admin/css/colors/default.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,14 +48,13 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header" align="center">
-                    <a class="navbar-brand" href="index">
+                    <a class="navbar-brand" href="index.html">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="/admin/images/logo.jpg" alt="homepage" class="dark-logo" width="140"  />
+                            <img src="/admin/images/logo.jpg" alt="homepage" class="dark-logo"  width="140"  />
                         </b>
                         <!--End Logo icon -->
-                    </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -82,7 +81,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/admin/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Administrador &nbsp;</span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/admin/images/person_1.jpg" alt="user" class="" /> <span class="hidden-md-down">Personal &nbsp;</span> </a>
                         </li>
                     </ul>
                 </div>
@@ -101,13 +100,9 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <br>
-                        <li> <a class="waves-effect waves-dark" href="index" aria-expanded="false"><i class="fa fa-bar-chart-o"></i><span class="hide-menu">Ventas</span></a>
+                        <li> <a class="waves-effect waves-dark" href="profilePer.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Perfil</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="perfil" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Perfil</span></a>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="personal" aria-expanded="false"><i class="fa fa-drivers-license-o"></i><span class="hide-menu">Personal</span></a>
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="citas" aria-expanded="false"><i class="fa fa-bell"></i><span class="hide-menu">Citas</span></a>
+                        <li> <a class="waves-effect waves-dark" href="citasPro.html" aria-expanded="false"><i class="fa fa-bell"></i><span class="hide-menu">Citas Agendadas</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -131,11 +126,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Personal</h3>
+                        <h3 class="text-themecolor">Citas</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Inicio</a></li>
-                            <li class="breadcrumb-item active">Personal</li>
-                            <li class="breadcrumb-item active">Adm.Perfil</li>
+                            <li class="breadcrumb-item active">Citas programadas</li>
                         </ol>
                     </div>
                 </div>
@@ -147,61 +141,72 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <!-- column -->
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <label class="control-label text-darks">Imagen del personal</label><br>
-                                <input type="file" id="perfil" name="perfil">
-                                
+                                <h4 class="card-title">Citas agendadas</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No. Cita</th>
+                                                <th>Nombre Cliente</th>
+                                                <th>Servicio</th>
+                                                <th>Fecha</th>
+                                                <th>Hora</th>
+                                                <th>Comentario</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Janet Robles Aguilar</td>
+                                                <td>Manicure especial</td>
+                                                <td>23/11/19</td>
+                                                <td>9:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <!-- Tab panes -->
-                            <div class="card-body">
-                                <form class="form-horizontal form-material" th:action="@{/agregaPerfil}" th:object="${usuario}" method="post">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Nombre</label>
-                                        <div class="col-md-12">
-                                            <input type="text" th:field="*{nombre}" id=nombre placeholder="Nombre" class="form-control form-control-line">
-                                            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:onerror="*{nombre}"></small>
-                                        </div>
-                                        <label class="col-md-12">Apellido Paterno</label>
-                                        <div class="col-md-12">
-                                            <input type="text" th:field="*{apellidoPaterno}" id=apellidoPaterno placeholder="Apellido Paterno" class="form-control form-control-line">
-                                            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:onerror="*{nombre}"></small>
-                                        </div>
-                                        <label class="col-md-12">Apellido Materno</label>
-                                        <div class="col-md-12">
-                                            <input type="text" th:field="*{apellidoMaterno}" id=apellidoMaterno placeholder="Apellido Materno" class="form-control form-control-line">
-                                            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:onerror="*{nombre}"></small>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">Username</label>
-                                        <div class="col-md-12">
-                                            <input type="text" th:field="*{username}" id=username placeholder="usuario" class="form-control form-control-line">
-                                            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:onerror="*{nombre}"></small>
-                                        </div>
-                                        <label class="col-md-12">Contraseña</label>
-                                        <div class="col-md-12">
-                                            <input type="password" th:field="*{password}" id=password placeholder="***" class="form-control form-control-line">
-                                            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:onerror="*{nombre}"></small>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success" type=submit>Agregar Perfil</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
                 </div>
                 <!-- Row -->
                 <!-- ============================================================== -->
@@ -236,13 +241,14 @@
     <script src="/admin/node_modules/bootstrap/js/popper.min.js"></script>
     <script src="/admin/node_modules/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/admin/admin/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/admin/js/perfect-scrollbar.jquery.min.js"></script>
     <!--Wave Effects -->
-    <script src="/admin/admin/js/waves.js"></script>
+    <script src="/admin/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="/admin/admin/js/sidebarmenu.js"></script>
+    <script src="/admin/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="/admin/admin/js/custom.min.js"></script>
+    <script src="/admin/js/custom.min.js"></script>
+    <script src="/admin/js/agenda.js"></script>
 </body>
 
 </html>
