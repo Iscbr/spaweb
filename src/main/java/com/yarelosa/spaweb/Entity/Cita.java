@@ -1,6 +1,9 @@
 package com.yarelosa.spaweb.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -42,25 +45,13 @@ public class Cita implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "usuario_id")
+    @JsonIgnore
+    @ToString.Exclude
     private Usuario usuario;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "servicio_id")
+    @JsonManagedReference
+    @ToString.Exclude
     private Servicio servicio;
-
-    @Override
-    public String toString() {
-        return "Cita{" +
-                "id=" + id +
-                ", folio='" + folio + '\'' +
-                ", horaEntrada=" + horaEntrada +
-                ", horaSalida=" + horaSalida +
-                ", fecha=" + fecha +
-                ", nombreCliente='" + nombreCliente + '\'' +
-                ", correoCliente='" + correoCliente + '\'' +
-                ", activo=" + activo +
-                ", usuario=" + usuario.toString() +
-                ", servicio=" + servicio.toString() +
-                '}';
-    }
 }

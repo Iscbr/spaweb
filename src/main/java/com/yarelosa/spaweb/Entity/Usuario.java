@@ -1,8 +1,10 @@
 package com.yarelosa.spaweb.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.yarelosa.spaweb.com.yarelosa.spaweb.Util.Views;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -47,6 +49,7 @@ public class Usuario {
             name = "usuario_rol",
             joinColumns = { @JoinColumn(name = "usuario_id") },
             inverseJoinColumns = { @JoinColumn(name = "rol_id") })
+    @ToString.Exclude
     private List<Rol> roles;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -54,21 +57,7 @@ public class Usuario {
             name = "usuario_servicio",
             joinColumns = { @JoinColumn(name = "usuario_id") },
             inverseJoinColumns = { @JoinColumn(name = "servicio_id") })
+    @JsonManagedReference
+    @ToString.Exclude
     private List<Servicio> servicios;
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellidoPaterno='" + apellidoPaterno + '\'' +
-                ", apellidoMaterno='" + apellidoMaterno + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", username='" + username + '\'' +
-                ", activo=" + activo +
-                ", roles=" + roles +
-                ", servicios=" + servicios +
-                '}';
-    }
 }

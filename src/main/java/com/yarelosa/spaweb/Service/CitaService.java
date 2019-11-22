@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -46,7 +47,12 @@ public class CitaService {
         cita.setFecha(LocalDate.now());
         cita.setUsuario(usuario);
         cita.setServicio(servicio);
+        cita.setComentarios(citaDTO.getComentarios());
         citaRepository.save(cita);
         return folio;
+    }
+
+    public List<Cita> getAll() {
+        return citaRepository.getAllByIdIsNotNull();
     }
 }

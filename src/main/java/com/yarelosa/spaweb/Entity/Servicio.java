@@ -1,7 +1,10 @@
 package com.yarelosa.spaweb.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yarelosa.spaweb.Repository.UsuarioRepository;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Time;
@@ -36,19 +39,8 @@ public class Servicio {
     private Boolean activo;
 
     @ManyToMany(mappedBy = "servicios")
+    @JsonIgnore
+    @ToString.Exclude
     private List<Usuario> users;
 
-    @Override
-    public String toString() {
-        return "Servicio{" +
-                "id=" + id +
-                ", servicioNombre='" + servicioNombre + '\'' +
-                ", servicioDesc='" + servicioDesc + '\'' +
-                ", precio=" + precio +
-                ", duracion=" + duracion +
-                ", servicioCatego='" + servicioCatego + '\'' +
-                ", activo=" + activo +
-                ", users=" + users +
-                '}';
-    }
 }

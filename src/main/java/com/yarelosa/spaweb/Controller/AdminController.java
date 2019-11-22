@@ -1,17 +1,26 @@
 package com.yarelosa.spaweb.Controller;
 
+import com.yarelosa.spaweb.Entity.Cita;
 import com.yarelosa.spaweb.Entity.Usuario;
+import com.yarelosa.spaweb.Service.CitaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/spaweb")
 public class AdminController {
+
+    private final CitaService citaService;
+
+    public AdminController(CitaService citaService) {
+        this.citaService = citaService;
+    }
 
     @GetMapping({"/index", "/home", ""})
     public String index(Model model) {
@@ -40,6 +49,8 @@ public class AdminController {
      */
     @GetMapping("/citas")
     public String citas(Model model) {
+        List<Cita> citas = citaService.getAll();
+        model.addAttribute("citas", citas);
         return "/admin/citasPro";
     }
 
