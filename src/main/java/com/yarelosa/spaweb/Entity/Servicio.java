@@ -37,4 +37,18 @@ public class Servicio {
 
     @ManyToMany(mappedBy = "servicios")
     private List<Usuario> users;
+
+    @Override
+    public String toString() {
+        return "Servicio{" +
+                "id=" + id +
+                ", servicioNombre='" + servicioNombre + '\'' +
+                ", servicioDesc='" + servicioDesc + '\'' +
+                ", precio=" + precio +
+                ", duracion=" + duracion +
+                ", servicioCatego='" + servicioCatego + '\'' +
+                ", activo=" + activo +
+                ", users=" + users +
+                '}';
+    }
 }

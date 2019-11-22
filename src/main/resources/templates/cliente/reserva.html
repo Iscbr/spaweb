@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>reserva</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="#" th:action="@{/reservas/reservar}" th:object="${citaDTO}" method="post">
+                    <p>Simple Text Field: <input type="text" th:field="*{idUsuario}" /></p>
+                    <p>Simple Text Field: <input type="text" th:field="*{idServicio}" /></p>
+                    <p>Simple Text Field: <input type="text" th:field="*{horaReserva}" /></p>
+                    <p>Simple Text Field: <input type="text" th:field="*{nombreUsuario}" /></p>
+                    <p>Simple Text Field: <input type="text" th:field="*{emailUsuario}" /></p>
+                    <button class="btn btn-primary" type="submit">Realizar reserva</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
