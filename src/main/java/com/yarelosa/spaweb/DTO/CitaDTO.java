@@ -9,4 +9,6 @@ public class CitaDTO {
     private String horaReserva;
     private String nombreUsuario;
     private String emailUsuario;
+    private String comentarios;
+    private String fecha;
 }

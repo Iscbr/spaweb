@@ -28,6 +28,9 @@ public class Cita implements Serializable {
     @Column(name = "citas_fecha")
     private LocalDate fecha;
 
+    @Column(name = "citas_comentarios", length = 500)
+    private String comentarios;
+
     @Column(name = "citas_nombre_cliente", length = 100)
     private String nombreCliente;
 

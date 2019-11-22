@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form action="#" th:action="@{/reservas/reservar}" th:object="${citaDTO}" method="post">
+                <form th:action="@{/reservar}" th:object="${citaDTO}" method="post">
                     <p>Simple Text Field: <input type="text" th:field="*{idUsuario}" /></p>
                     <p>Simple Text Field: <input type="text" th:field="*{idServicio}" /></p>
                     <p>Simple Text Field: <input type="text" th:field="*{horaReserva}" /></p>

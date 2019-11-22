@@ -18,7 +18,7 @@ public class ServicioService {
     }
 
     public List<Servicio> getAllService() {
-        return this.servicioRepository.getAllByActivoTrue();
+        return servicioRepository.getAllByActivoTrue();
     }
 
 }

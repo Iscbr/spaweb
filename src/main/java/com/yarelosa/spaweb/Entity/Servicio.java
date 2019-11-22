@@ -20,16 +20,16 @@ public class Servicio {
     @Column (name = "servicio_nombre", length = 50, nullable = false)
     private String servicioNombre;
 
-    @Column ( name = "servicio_descrip", length = 15, nullable = false)
+    @Column ( name = "servicio_descrip", length = 1000, nullable = false)
     private String servicioDesc;
 
     @Column (name = "servicio_precio", nullable =  false)
     private Float precio;
 
     @Column (name = "servicio_duracion", nullable = false)
-    private Time duracion;
+    private Integer duracion;
 
-    @Column (name = "servicio_categoria", nullable = false, length = 25)
+    @Column (name = "servicio_categoria", nullable = false, length = 100)
     private String servicioCatego;
 
     @Column (name = "activo", nullable = false)
