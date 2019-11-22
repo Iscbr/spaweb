@@ -46,7 +46,6 @@ public class CitaController {
         List<Usuario> usuarios = usuarioService.getAllUsers();
 
         model.addAttribute("servicios", servicios);
-        model.addAttribute("serviceSelected", new Integer(0));
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("citaDTO", new CitaDTO());
         return "/cliente/citas";

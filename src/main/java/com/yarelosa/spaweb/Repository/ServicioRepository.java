@@ -12,5 +12,5 @@ public interface ServicioRepository extends CrudRepository<Servicio, Integer> {
 
     List<Servicio> getAllByIdEquals(int id);
 
-    Servicio findByNombreEquals(String name);
+    Servicio findByServicioNombreEquals(String name);
 }
