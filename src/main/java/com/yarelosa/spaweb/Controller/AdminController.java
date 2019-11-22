@@ -1,9 +1,13 @@
 package com.yarelosa.spaweb.Controller;
 
+import com.yarelosa.spaweb.Entity.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping("/spaweb")
@@ -39,8 +43,12 @@ public class AdminController {
         return "/admin/citasPro";
     }
 
-    @GetMapping("/adminPer")
-    public String agregar(Model model){
-        return "/admin/adminPer";
+    @PostMapping("/adminPer")
+    public String crearUser(Map<String, Object> model){
+
+        Usuario usuario = new Usuario();
+        model.put("usuario", usuario);
+        model.put("titulo", "formulario del usuario");
+        return "admin/adminPer";
     }
 }

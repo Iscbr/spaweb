@@ -21,4 +21,10 @@ public class ServicioService {
         return this.servicioRepository.getAllByActivoTrue();
     }
 
+    public List<Servicio> getServiceById(int id) { return this.servicioRepository.getAllByIdEquals(id); }
+
+    public Servicio getServiciodefault(String name){
+        return this.servicioRepository.findByNombreEquals(name);
+    }
+
 }

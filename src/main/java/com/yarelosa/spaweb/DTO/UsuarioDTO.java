@@ -29,6 +29,4 @@ public class UsuarioDTO {
     @NotEmpty
     private String password;
 
-    @NotNull
-    private Boolean activo;
 }
