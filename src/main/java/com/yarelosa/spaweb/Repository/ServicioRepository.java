@@ -10,4 +10,7 @@ import java.util.List;
 public interface ServicioRepository extends CrudRepository<Servicio, Integer> {
     List<Servicio> getAllByActivoTrue();
 
+    List<Servicio> getAllByIdEquals(int id);
+
+    Servicio findByNombreEquals(String name);
 }
